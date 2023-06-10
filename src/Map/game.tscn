@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://pmvftrejo0so"]
+
+[ext_resource type="Script" path="res://src/Main/Game.gd" id="1_cp6qg"]
+[ext_resource type="Script" path="res://src/Map/Map.gd" id="2_5i143"]
+[ext_resource type="Script" path="res://src/Map/Camera2d.gd" id="3_esfgy"]
+
+[sub_resource type="TileSet" id="TileSet_wc5do"]
+tile_shape = 3
+tile_layout = 2
+tile_size = Vector2i(128, 128)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_cp6qg")
+
+[node name="Map" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_wc5do")
+format = 2
+script = ExtResource("2_5i143")
+
+[node name="Camera2d" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("3_esfgy")
